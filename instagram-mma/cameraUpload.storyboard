@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="m6R-ZF-Pay">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Camera Upload View Controller-->
+        <scene sceneID="QbE-To-Wt3">
+            <objects>
+                <viewController id="6Rc-DP-9Hl" customClass="cameraUploadViewController" customModule="instagram_mma" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tlw-6l-1Bf"/>
+                        <viewControllerLayoutGuide type="bottom" id="T23-S9-jV4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="10A-aJ-aCS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e9C-W3-QuV">
+                                <rect key="frame" x="0.0" y="511" width="600" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.61581165140000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Rjl-Kb-VMy"/>
+                                    <constraint firstAttribute="width" constant="600" id="S4H-WG-TBg"/>
+                                </constraints>
+                                <state key="normal" title="PUBLISH">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FfF-P0-aUW">
+                                <rect key="frame" x="0.0" y="472" width="600" height="40"/>
+                                <color key="backgroundColor" red="0.98039215686274506" green="0.52941176470588236" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="600" id="sj8-oB-L3s"/>
+                                    <constraint firstAttribute="height" constant="40" id="tr0-aJ-Yje"/>
+                                </constraints>
+                                <state key="normal" title="CAMERA ROLL">
+                                    <color key="titleColor" red="0.97538247495873898" green="1" blue="0.9597082786095098" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="openPhotoLibraryButton:" destination="6Rc-DP-9Hl" eventType="touchUpInside" id="Lqu-D9-4Id"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1e4-UV-EUr">
+                                <rect key="frame" x="0.0" y="432" width="600" height="40"/>
+                                <color key="backgroundColor" red="0.32941176470588235" green="0.73333333333333328" blue="0.023529411764705882" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Uax-Ij-Afy"/>
+                                    <constraint firstAttribute="width" constant="600" id="iu5-S0-xXg"/>
+                                </constraints>
+                                <state key="normal" title="TAKE PICTURE">
+                                    <color key="titleColor" red="1" green="0.97359924441189083" blue="0.99039301264057322" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="openCameraButton:" destination="6Rc-DP-9Hl" eventType="touchUpInside" id="QjV-S9-joB"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eAJ-SO-RQS">
+                                <rect key="frame" x="180" y="82" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="6SG-yH-EQu"/>
+                                    <constraint firstAttribute="width" constant="240" id="JNq-mi-3YH"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y7g-IS-fFc">
+                                <rect key="frame" x="299" y="393" width="281" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="281" id="73N-IY-M0W"/>
+                                    <constraint firstAttribute="height" constant="40" id="gWA-Gc-u7u"/>
+                                </constraints>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveButt:" destination="6Rc-DP-9Hl" eventType="touchUpInside" id="wE4-27-RmS"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3SH-Zj-rri">
+                                <rect key="frame" x="127" y="330" width="346" height="83"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="83" id="NT5-OL-8is"/>
+                                    <constraint firstAttribute="width" constant="346" id="yVW-Ln-uEt"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aL2-yh-eWU">
+                                <rect key="frame" x="0.0" y="393" width="291" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="291" id="7QL-IU-PVe"/>
+                                    <constraint firstAttribute="height" constant="40" id="sYl-ld-twV"/>
+                                </constraints>
+                                <state key="normal" title="Delete"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="1e4-UV-EUr" firstAttribute="leading" secondItem="10A-aJ-aCS" secondAttribute="leading" id="4wU-d7-a3q"/>
+                            <constraint firstItem="eAJ-SO-RQS" firstAttribute="top" secondItem="tlw-6l-1Bf" secondAttribute="bottom" constant="18" id="63i-KR-52a"/>
+                            <constraint firstAttribute="trailing" secondItem="e9C-W3-QuV" secondAttribute="trailing" id="CEt-wX-TUo"/>
+                            <constraint firstItem="T23-S9-jV4" firstAttribute="top" secondItem="e9C-W3-QuV" secondAttribute="bottom" id="Fr3-4c-Qfl"/>
+                            <constraint firstItem="FfF-P0-aUW" firstAttribute="top" secondItem="Y7g-IS-fFc" secondAttribute="bottom" constant="39" id="HAE-79-X7m"/>
+                            <constraint firstAttribute="trailing" secondItem="1e4-UV-EUr" secondAttribute="trailing" id="I3P-PZ-Io0"/>
+                            <constraint firstItem="3SH-Zj-rri" firstAttribute="centerX" secondItem="10A-aJ-aCS" secondAttribute="centerX" id="ONH-ED-9ci"/>
+                            <constraint firstAttribute="trailing" secondItem="Y7g-IS-fFc" secondAttribute="trailing" constant="20" id="RNU-pk-2a4"/>
+                            <constraint firstAttribute="trailing" secondItem="FfF-P0-aUW" secondAttribute="trailing" id="RXe-bO-Zzn"/>
+                            <constraint firstItem="3SH-Zj-rri" firstAttribute="top" secondItem="eAJ-SO-RQS" secondAttribute="bottom" constant="8" id="X4I-90-0AL"/>
+                            <constraint firstItem="e9C-W3-QuV" firstAttribute="leading" secondItem="10A-aJ-aCS" secondAttribute="leading" id="Xg0-VL-twe"/>
+                            <constraint firstItem="aL2-yh-eWU" firstAttribute="leading" secondItem="10A-aJ-aCS" secondAttribute="leading" id="ZdY-5v-4Tm"/>
+                            <constraint firstItem="FfF-P0-aUW" firstAttribute="top" secondItem="1e4-UV-EUr" secondAttribute="bottom" id="ckc-ov-YNo"/>
+                            <constraint firstItem="FfF-P0-aUW" firstAttribute="leading" secondItem="10A-aJ-aCS" secondAttribute="leading" id="eX0-WP-g7d"/>
+                            <constraint firstItem="T23-S9-jV4" firstAttribute="top" secondItem="FfF-P0-aUW" secondAttribute="bottom" constant="39" id="sjt-mB-nB5"/>
+                            <constraint firstItem="FfF-P0-aUW" firstAttribute="top" secondItem="aL2-yh-eWU" secondAttribute="bottom" constant="39" id="uMp-Ax-Pvf"/>
+                            <constraint firstItem="eAJ-SO-RQS" firstAttribute="centerX" secondItem="10A-aJ-aCS" secondAttribute="centerX" id="vzL-wU-zU0"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="3S2-Ys-kU7"/>
+                    <connections>
+                        <outlet property="imagePicked" destination="eAJ-SO-RQS" id="gto-Tz-gVM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="clK-rk-0qt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1812" y="400"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="QNV-2H-I27">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WO2-WB-acp" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="camera3" id="zrH-XZ-YLt"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ec2-ho-D9C">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6Rc-DP-9Hl" kind="relationship" relationship="rootViewController" id="6fF-Om-l7e"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VBr-5g-wdF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1000" y="400"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="aLB-ci-3cF">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="m6R-ZF-Pay" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="Oai-Xz-uzJ">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="WO2-WB-acp" kind="relationship" relationship="viewControllers" id="GbT-Dt-qmw"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sdm-fH-dh3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="188" y="400"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="camera3" width="75" height="75"/>
+    </resources>
+</document>
