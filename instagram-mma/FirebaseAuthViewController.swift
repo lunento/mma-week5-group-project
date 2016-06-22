@@ -25,6 +25,11 @@ class FirebaseAuthViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var addPostButton: UIButton!
     @IBOutlet weak var myPostButton: UIButton!
+    @IBOutlet weak var updateProfileButton: UIButton!
+    
+    @IBOutlet weak var profileImageView: UIImageView!
+    
+    var userid = prefs.stringForKey("userID")
     
     
     // Password *MUST* be a minimum of 6 characters
@@ -36,10 +41,13 @@ class FirebaseAuthViewController: UIViewController {
 
     isUserLoggedIn()
         
-    self.loginMessageLabel.hidden = true
+        self.loginMessageLabel.hidden = true
         self.addPostButton.hidden = true
         self.allPostButton.hidden = true
-    self.myPostButton.hidden = true
+        self.myPostButton.hidden = true
+        self.profileImageView.hidden = true
+        self.updateProfileButton.hidden = true
+        
         
     }
     
@@ -47,6 +55,7 @@ class FirebaseAuthViewController: UIViewController {
     
         logout()
         isUserLoggedIn()
+        
     }
 
     @IBAction func createUser(sender: UIButton) {
@@ -65,6 +74,14 @@ class FirebaseAuthViewController: UIViewController {
                 
                 // the user was created!
                 print("User was created!")
+                
+                // need to add the fields to firebase
+//                let profilePath = FIRDatabase.database().reference().ref.child("user").child(prefs.stringForKey("userID")!).child("profile")
+//                profilePath.child("displayName").setValue("")
+//                profilePath.child("website").setValue("")
+//                profilePath.child("bio").setValue("")
+                
+
                 self.login()
                 
             }
@@ -75,9 +92,13 @@ class FirebaseAuthViewController: UIViewController {
     
     func logout() {
         try! FIRAuth.auth()!.signOut()
-        isUserLoggedIn()
         self.emailTextField.text = ""
         self.passwordTextField.text = ""
+//        prefs.setValue("", forKey: "userID")
+        NSUserDefaults.standardUserDefaults().removeObjectForKey("userID")
+        print("LOGOUT...")
+        print("LOGOUT > prefs.valueForKey userid: \(prefs.valueForKey("userID"))")
+//        print("LOGOUT > self.userid: \(self.userid)")
     }
     
     func login() {
@@ -98,7 +119,7 @@ class FirebaseAuthViewController: UIViewController {
 
                 
             } else {
-                print("YEAH! LOGGED IN OK")
+                print("YEAH! LOGGED IN OK.....")
                 self.loginMessageLabel.hidden = false
                 self.loginMessageLabel.text = "You're Logged In!"
                 self.loginMessageLabel.backgroundColor = UIColor.greenColor()
@@ -106,12 +127,55 @@ class FirebaseAuthViewController: UIViewController {
                 self.allPostButton.hidden = false
                 self.myPostButton.hidden = false
                 prefs.setValue("\(user!.uid)", forKey: "userID")
+                print("LOGIN > prefs.valueForKey user.uid: \(prefs.valueForKey("userID"))")
+                print("LOGIN > user.uid: \(user!.uid)")
+                self.refreshProfileImage()
+
             }
         })
         
         
     }
     
+    override func viewWillAppear(animated: Bool) {
+        refreshProfileImage()
+    }
+    
+    func refreshProfileImage() {
+
+        if prefs.valueForKey("userID") != nil {
+            
+        // GET IMAGE FROM GOOGLE FIREBASE STORAGE:
+        let storage = FIRStorage.storage()
+        let storageRef = storage.referenceForURL("gs://instagram-mma.appspot.com")
+        let userStorageRef = storageRef.child("\(prefs.valueForKey("userID")!)")
+        let userImageFilename = userStorageRef.child("profile.jpg")
+        
+//        print("self.userid: \(self.userid)")
+        print("prefs.valueForKey userID: \(prefs.valueForKey("userID"))")
+        print("userImageFilename: \(userImageFilename)")
+        
+        userImageFilename.dataWithMaxSize(3 * 1024 * 1024) { (data, error) -> Void in
+            if (error != nil) {
+                // Uh-oh, an error occurred!
+                print("Error in downloading image file")
+                print(error?.description)
+                self.profileImageView.image = UIImage(named: "white")
+            } else {
+                // Data for "images/island.jpg" is returned
+                // ... let islandImage: UIImage! = UIImage(data: data!)
+                self.profileImageView.image = UIImage(data: data!)
+                self.profileImageView.contentMode = UIViewContentMode.ScaleAspectFit
+                print("the cell image is being called")
+                print(data?.bytes)
+            }
+        }
+        // END GET IMAGE FROM GOOGLE FIREBASE STORAGE - ABOVE
+        } else {
+            self.profileImageView.image = UIImage(named: "white")
+        }
+
+    }
     
     func isUserLoggedIn() {
         
@@ -129,31 +193,38 @@ class FirebaseAuthViewController: UIViewController {
                 self.addPostButton.hidden = false
                 self.allPostButton.hidden = false
                 self.myPostButton.hidden = false
+                self.profileImageView.hidden = false
+                self.updateProfileButton.hidden = false
                 
-                if let user = FIRAuth.auth()?.currentUser {
-                    // User is signed in.
-                    // display currentUser name
-                    self.usernameLabel.text = "currentUser: \(user)\nEmail: \(user.email!)\nUID: \(user.uid)\nDisplayName: \(user.displayName)"
-
-                } else {
-                    
-                    // No user is signed in.
-                    self.usernameLabel.text = ""
-                    self.logoutButton.hidden = true
-                    self.loginButton.hidden = false
-                }
-                
-                if let user = FIRAuth.auth()?.currentUser {
-                    let name = user.displayName
-                    let email = user.email
-                    let photoUrl = user.photoURL
-                    let uid = user.uid;  // The user's ID, unique to the Firebase project.
-                    // Do NOT use this value to authenticate with
-                    // your backend server, if you have one. Use
-                    // getTokenWithCompletion:completion: instead.
-                } else {
-                    // No user is signed in.
-                }
+//                if let user = FIRAuth.auth()?.currentUser {
+//                    // User is signed in.
+//                    // display currentUser name
+//                    self.usernameLabel.text = "currentUser: \(user)\nEmail: \(user.email!)\nUID: \(user.uid)\nDisplayName: \(user.displayName)"
+//
+//                    
+//                    self.refreshProfileImage()
+//                
+//                    
+//                } else {
+//                    
+//                    // No user is signed in.
+//                    self.usernameLabel.text = ""
+//                    self.logoutButton.hidden = true
+//                    self.loginButton.hidden = false
+//                    self.profileImageView.hidden = true
+//                }
+//                
+//                if let user = FIRAuth.auth()?.currentUser {
+//                    let name = user.displayName
+//                    let email = user.email
+//                    let photoUrl = user.photoURL
+//                    let uid = user.uid;  // The user's ID, unique to the Firebase project.
+//                    // Do NOT use this value to authenticate with
+//                    // your backend server, if you have one. Use
+//                    // getTokenWithCompletion:completion: instead.
+//                } else {
+//                    // No user is signed in.
+//                }
                 
                 
             } else {
@@ -171,6 +242,8 @@ class FirebaseAuthViewController: UIViewController {
                 self.allPostButton.hidden = true
                 self.myPostButton.hidden = true
                 prefs.setValue("", forKey: "userID")
+                self.profileImageView.hidden = true
+                self.updateProfileButton.hidden = true
 
 
                 

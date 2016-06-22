@@ -32,6 +32,10 @@
 		FA225DD21D198C0E001D0DD1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA225DD11D198C0E001D0DD1 /* User.swift */; };
 		FA225DD51D198C2C001D0DD1 /* pp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA225DD31D198C2C001D0DD1 /* pp.jpg */; };
 		FA225DD61D198C2C001D0DD1 /* pbg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA225DD41D198C2C001D0DD1 /* pbg.jpg */; };
+		FA225DD81D19A10F001D0DD1 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA225DD71D19A10F001D0DD1 /* Profile.storyboard */; };
+		FA225DDA1D19A122001D0DD1 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA225DD91D19A122001D0DD1 /* ProfileViewController.swift */; };
+		FA225DDC1D1AA9BE001D0DD1 /* ProfileLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA225DDB1D1AA9BE001D0DD1 /* ProfileLayout.storyboard */; };
+		FA225DDE1D1AA9D1001D0DD1 /* ProfileLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA225DDD1D1AA9D1001D0DD1 /* ProfileLayoutViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +68,10 @@
 		FA225DD11D198C0E001D0DD1 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FA225DD31D198C2C001D0DD1 /* pp.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pp.jpg; sourceTree = "<group>"; };
 		FA225DD41D198C2C001D0DD1 /* pbg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pbg.jpg; sourceTree = "<group>"; };
+		FA225DD71D19A10F001D0DD1 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		FA225DD91D19A122001D0DD1 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		FA225DDB1D1AA9BE001D0DD1 /* ProfileLayout.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProfileLayout.storyboard; sourceTree = "<group>"; };
+		FA225DDD1D1AA9D1001D0DD1 /* ProfileLayoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileLayoutViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +145,10 @@
 			isa = PBXGroup;
 			children = (
 				56BBCA541D137E1200D1A45A /* Main.storyboard */,
+				FA225DD71D19A10F001D0DD1 /* Profile.storyboard */,
+				FA225DD91D19A122001D0DD1 /* ProfileViewController.swift */,
+				FA225DDB1D1AA9BE001D0DD1 /* ProfileLayout.storyboard */,
+				FA225DDD1D1AA9D1001D0DD1 /* ProfileLayoutViewController.swift */,
 				56BBCA771D156E5200D1A45A /* AddPostViewController.swift */,
 				567A82A11D18B983008AC19D /* AllPostsViewController.swift */,
 				567A829F1D18627E008AC19D /* MyPostsViewController.swift */,
@@ -237,8 +249,10 @@
 				56BBCA661D137E2C00D1A45A /* GoogleService-Info.plist in Resources */,
 				56BBCA5B1D137E1200D1A45A /* Assets.xcassets in Resources */,
 				FA225DCA1D198B2B001D0DD1 /* Feed.storyboard in Resources */,
+				FA225DDC1D1AA9BE001D0DD1 /* ProfileLayout.storyboard in Resources */,
 				FA225DC41D198A0B001D0DD1 /* cameraUpload.storyboard in Resources */,
 				FA225DD51D198C2C001D0DD1 /* pp.jpg in Resources */,
+				FA225DD81D19A10F001D0DD1 /* Profile.storyboard in Resources */,
 				56BBCA561D137E1200D1A45A /* Main.storyboard in Resources */,
 				FA225DD61D198C2C001D0DD1 /* pbg.jpg in Resources */,
 			);
@@ -311,7 +325,9 @@
 				FA225DCE1D198BFB001D0DD1 /* CellTableViewCell.swift in Sources */,
 				56BBCA701D1417D500D1A45A /* TextInputTableView.swift in Sources */,
 				56BBCA781D156E5200D1A45A /* AddPostViewController.swift in Sources */,
+				FA225DDA1D19A122001D0DD1 /* ProfileViewController.swift in Sources */,
 				56BBCA511D137E1200D1A45A /* AppDelegate.swift in Sources */,
+				FA225DDE1D1AA9D1001D0DD1 /* ProfileLayoutViewController.swift in Sources */,
 				56BBCA6C1D139D8600D1A45A /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
