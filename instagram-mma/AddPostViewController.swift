@@ -69,7 +69,7 @@ class AddPostViewController: UIViewController, UIImagePickerControllerDelegate, 
 //                let email = user.email
 //                let photoUrl = user.photoURL
 //                let uid = user.uid;
-            
+            ///
                 // reference to the storage service for firebase
                 let storage = FIRStorage.storage()
                 
@@ -107,7 +107,7 @@ class AddPostViewController: UIViewController, UIImagePickerControllerDelegate, 
                         }
                     } // end of uploadTask
                     
-                }) // end of requestContentEditingInputWithOptions
+                }) // end of requestContentEditingInputWithOptions  ←end of image storage
                 
                 // start of ADD RECORD TO FIREBASE DATABASE:
                 // captionTextField, locationTextField, taggedFriendsTextField inserted
