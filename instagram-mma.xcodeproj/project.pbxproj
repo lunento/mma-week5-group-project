@@ -162,8 +162,8 @@
 			children = (
 				FA225DC91D198B2B001D0DD1 /* Feed.storyboard */,
 				FA225DCB1D198B6E001D0DD1 /* ViewController.swift */,
-				FA225DCD1D198BFB001D0DD1 /* CellTableViewCell.swift */,
 				FA225DCF1D198C06001D0DD1 /* FeedVC.swift */,
+				FA225DCD1D198BFB001D0DD1 /* CellTableViewCell.swift */,
 				FA225DD11D198C0E001D0DD1 /* User.swift */,
 				FA225DD31D198C2C001D0DD1 /* pp.jpg */,
 				FA225DD41D198C2C001D0DD1 /* pbg.jpg */,

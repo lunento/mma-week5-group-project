@@ -23,6 +23,7 @@ class AllPostsViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // here we retrieve the snaptshot of our databse so we can setup retrieving our posts data and adding it to our arrayForTable
         self.postRef.observeEventType(.Value) { (snap: FIRDataSnapshot) in
         
             self.arrayForTable = []
@@ -30,6 +31,7 @@ class AllPostsViewController: UIViewController, UITableViewDelegate, UITableView
             
             print(self.receivedPosts)
             
+            // We do fast enumeration to retrieve the data of posts and put them in our arrayForTable array of dictionaries
             for(key, value) in self.receivedPosts {
                 if let post = self.receivedPosts["\(key)"] as? NSDictionary {
                     self.arrayForTable.append(post)
@@ -39,7 +41,6 @@ class AllPostsViewController: UIViewController, UITableViewDelegate, UITableView
             }
         }
         self.tableView.reloadData()
-    
     
     }
 
@@ -60,6 +61,7 @@ class AllPostsViewController: UIViewController, UITableViewDelegate, UITableView
         
         print("userImageFilename: \(userImageFilename)")
         
+        
         userImageFilename.dataWithMaxSize(2 * 1024 * 1024) { (data, error) -> Void in
             if (error != nil) {
                 // Uh-oh, an error occurred!
@@ -72,14 +74,14 @@ class AllPostsViewController: UIViewController, UITableViewDelegate, UITableView
                 print("the cell image is being called")
                 print(data?.bytes)
             }
-
         }
-        
         return cell
-    
 }
-
+    
+    
+    // this dismisses the allPosts view controller
     @IBAction func onCancelButtonTapped(sender: UIButton) {
+        
         dismissViewControllerAnimated(true, completion: nil)
     }
 

@@ -53,17 +53,8 @@ class ViewController: UIViewController {
         super.viewDidAppear(animated)
         
         
-        ref.child("Users").child("Mohamed").child("age").setValue("20")
+//        ref.child("posts").child("Mohammed").child("nameid").setValue("KingHabibi")
         
-       ref.child("Users").child("Amir").child("age").setValue("21")
-        
-        ref.child("Users").child("Amir").child("Description").setValue("Handsome, young gentleman")
-        
-        ref.child("Users").child("Amir").child("Pics").setValue(["pic1", "pic2", "pic3"])
-        
-
-
     }
-
 }
 
