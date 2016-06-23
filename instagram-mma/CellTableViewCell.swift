@@ -15,19 +15,15 @@ class CellTableViewCell: UITableViewCell {
     @IBOutlet weak var postImage: UIImageView!
     @IBOutlet weak var likesLabel: UILabel!
     @IBOutlet weak var comments: UILabel!
+    @IBOutlet weak var likesButton: UIButton!
     
+
    
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()
-//        let emiliaPic = "Emilia2.jpg"
-//        let emiliaImage = UIImage(named: emiliaPic)
-        
-//        let sandra = User(withName: "DandySanddyyyy", avatar:UIImageView(image: sandraImage!), post: UIImageView(image: sandraImage!), likes: "120", comments: "omggg sandy will u marry meeee")
-//        sandra.post.image = postImage.image
-        
-//        postImage.image = emiliaImage
+       
+
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -37,3 +33,11 @@ class CellTableViewCell: UITableViewCell {
     }
 
 }
+
+//        let emiliaPic = "Emilia2.jpg"
+//        let emiliaImage = UIImage(named: emiliaPic)
+
+//        let sandra = User(withName: "DandySanddyyyy", avatar:UIImageView(image: sandraImage!), post: UIImageView(image: sandraImage!), likes: "120", comments: "omggg sandy will u marry meeee")
+//        sandra.post.image = postImage.image
+
+//        postImage.image = emiliaImage

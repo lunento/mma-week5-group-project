@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		35AEE34E1D1B10B700F4FA91 /* unlike.png in Resources */ = {isa = PBXBuildFile; fileRef = 35AEE34D1D1B10B700F4FA91 /* unlike.png */; };
+		35AEE3501D1B10C000F4FA91 /* comment.png in Resources */ = {isa = PBXBuildFile; fileRef = 35AEE34F1D1B10C000F4FA91 /* comment.png */; };
 		567A829E1D1838D1008AC19D /* FirebaseAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567A829D1D1838D1008AC19D /* FirebaseAuthViewController.swift */; };
 		567A82A01D18627E008AC19D /* MyPostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567A829F1D18627E008AC19D /* MyPostsViewController.swift */; };
 		567A82A21D18B983008AC19D /* AllPostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567A82A11D18B983008AC19D /* AllPostsViewController.swift */; };
@@ -35,6 +37,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		35AEE34D1D1B10B700F4FA91 /* unlike.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unlike.png; sourceTree = "<group>"; };
+		35AEE34F1D1B10C000F4FA91 /* comment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = comment.png; sourceTree = "<group>"; };
 		46EF7BB1ADA066D57F773600 /* Pods-instagram-mma.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instagram-mma.release.xcconfig"; path = "Pods/Target Support Files/Pods-instagram-mma/Pods-instagram-mma.release.xcconfig"; sourceTree = "<group>"; };
 		567A829D1D1838D1008AC19D /* FirebaseAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseAuthViewController.swift; sourceTree = "<group>"; };
 		567A829F1D18627E008AC19D /* MyPostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPostsViewController.swift; sourceTree = "<group>"; };
@@ -165,6 +169,8 @@
 				FA225DCF1D198C06001D0DD1 /* FeedVC.swift */,
 				FA225DCD1D198BFB001D0DD1 /* CellTableViewCell.swift */,
 				FA225DD11D198C0E001D0DD1 /* User.swift */,
+				35AEE34F1D1B10C000F4FA91 /* comment.png */,
+				35AEE34D1D1B10B700F4FA91 /* unlike.png */,
 				FA225DD31D198C2C001D0DD1 /* pp.jpg */,
 				FA225DD41D198C2C001D0DD1 /* pbg.jpg */,
 			);
@@ -239,6 +245,8 @@
 				FA225DCA1D198B2B001D0DD1 /* Feed.storyboard in Resources */,
 				FA225DC41D198A0B001D0DD1 /* cameraUpload.storyboard in Resources */,
 				FA225DD51D198C2C001D0DD1 /* pp.jpg in Resources */,
+				35AEE34E1D1B10B700F4FA91 /* unlike.png in Resources */,
+				35AEE3501D1B10C000F4FA91 /* comment.png in Resources */,
 				56BBCA561D137E1200D1A45A /* Main.storyboard in Resources */,
 				FA225DD61D198C2C001D0DD1 /* pbg.jpg in Resources */,
 			);

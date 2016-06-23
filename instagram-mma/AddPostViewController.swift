@@ -124,7 +124,7 @@ class AddPostViewController: UIViewController, UIImagePickerControllerDelegate, 
                             "location": "\(self.locationTextField!.text!)",
                             "friends": "\(self.taggedFriendsTextField!.text!)",
                             "imageFilename": "\(final)",
-                            "postDateTime":"\(now)"]
+                            "postDateTime":"\(now)", "postID":"\(key)"]
                 let childUpdates = ["/user/\(user.uid)/posts/\(key)": post,
                                     "/posts/\(key)/": post]
                 ref.updateChildValues(childUpdates)
